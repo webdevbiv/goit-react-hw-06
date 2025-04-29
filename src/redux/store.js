@@ -15,13 +15,11 @@ import {
 
 import storage from 'redux-persist/lib/storage';
 
-// Persist config for contacts only
 const contactsPersistConfig = {
   key: 'contacts',
   storage,
 };
 
-// Wrap reducer with persistence
 const persistedContactsReducer = persistReducer(
   contactsPersistConfig,
   contactsReducer
