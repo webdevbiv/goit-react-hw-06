@@ -1,12 +1,13 @@
-# React + Vite
+Phonebook App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application for managing contacts. Users can add, search, and delete contacts. All data is persisted in localStorage.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Contact Management:** Easily add and delete contacts.
+- **Real-time Search:** Filter contacts by name as you type.
+- **Data Persistence:** Contacts are automatically saved in localStorage.
 
-## Expanding the ESLint configuration
+## Usage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open the app, add a new contact using the form, and use the search box to filter your contacts.

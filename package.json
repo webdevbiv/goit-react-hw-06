@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-05",
+  "name": "goit-react-hw-01",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,28 +10,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
+    "modern-normalize": "^3.0.1",
+    "nanoid": "^5.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.2",
-    "react-router-dom": "^7.5.2",
-    "react-spinners": "^0.17.0",
-    "sass": "^1.87.0"
+    "react-icons": "^5.5.0",
+    "sass": "^1.86.3",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react-swc": "^3.8.0",
-    "eslint": "^9.22.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "vite": "^6.3.1"
+    "globals": "^15.15.0",
+    "vite": "^6.2.0"
   }
 }
