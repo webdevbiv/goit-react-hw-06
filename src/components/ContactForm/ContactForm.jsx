@@ -1,23 +1,48 @@
-import { useId } from "react";
-import { Field, Form, Formik, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import s from "./ContactForm.module.scss";
+import { useId } from 'react';
+import { Field, Form, Formik, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import s from './ContactForm.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
+import { selectContacts } from '../../redux/selectors';
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .min(3, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
   number: Yup.string()
-    .matches(/^[0-9-]+$/, "Phone number can only include digits and hyphens")
-    .min(3, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+    .matches(/^[0-9-]+$/, 'Phone number can only include digits and hyphens')
+    .min(3, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
 });
 
-const ContactForm = ({ initialValues, onSubmit }) => {
+const initialValues = {
+  name: '',
+  number: '',
+};
+const ContactForm = () => {
+  const contacts = useSelector(selectContacts);
+  const dispatch = useDispatch();
   const nameFieldId = useId();
   const numberFieldId = useId();
+
+  const onSubmit = (values, { resetForm }) => {
+    const isDuplicate = contacts.some(
+      contact =>
+        contact.name.toLowerCase() === values.name.toLowerCase() &&
+        contact.number === values.number
+    );
+
+    if (isDuplicate) {
+      alert(`${values.name} is already in contacts.`);
+      return;
+    }
+
+    dispatch(addContact(values));
+    resetForm();
+  };
 
   return (
     <Formik

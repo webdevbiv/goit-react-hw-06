@@ -1,19 +1,16 @@
-import Contact from "../Contact/Contact";
-import s from "./ContactList.module.scss";
+import { useSelector } from 'react-redux';
+import { selectFilteredContacts } from '../../redux/selectors';
+import Contact from '../Contact/Contact';
+import s from './ContactList.module.scss';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+const ContactList = () => {
+  const contacts = useSelector(selectFilteredContacts);
+
   return (
     <ul className={s.contactList}>
-      {contacts.map(({ id, name, number }) => {
-        return (
-          <Contact
-            key={id}
-            name={name}
-            number={number}
-            onClick={() => onDeleteContact(id)}
-          />
-        );
-      })}
+      {contacts.map(({ id, name, number }) => (
+        <Contact key={id} name={name} number={number} />
+      ))}
     </ul>
   );
 };
