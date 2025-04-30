@@ -21,7 +21,6 @@ const FeedbackSchema = Yup.object().shape({
 const initialValues = {
   name: '',
   number: '',
-  id: '',
 };
 const ContactForm = () => {
   const contacts = useSelector(selectContacts);
