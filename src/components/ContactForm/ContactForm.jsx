@@ -21,6 +21,7 @@ const FeedbackSchema = Yup.object().shape({
 const initialValues = {
   name: '',
   number: '',
+  id: '',
 };
 const ContactForm = () => {
   const contacts = useSelector(selectContacts);
@@ -29,6 +30,11 @@ const ContactForm = () => {
   const numberFieldId = useId();
 
   const onSubmit = (values, { resetForm }) => {
+    const newContact = {
+      ...values,
+      id: Date.now().toString(),
+    };
+
     const isDuplicate = contacts.some(
       contact =>
         contact.name.toLowerCase() === values.name.toLowerCase() &&
@@ -40,7 +46,7 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact(values));
+    dispatch(addContact(newContact));
     resetForm();
   };
 
